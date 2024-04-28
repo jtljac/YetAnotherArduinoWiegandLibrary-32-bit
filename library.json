@@ -1,0 +1,27 @@
+{
+  "name": "Yet Another Arduino Wiegand Library",
+  "version": "2.1.0",
+  "description": "This library supports messages of different sizes (Usually 26 or 34 bits) and automatic size detection.",
+  "keywords": [
+    "communication",
+    "wiegand"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtljac/YetAnotherArduinoWiegand"
+  },
+  "authors": [
+    {
+      "name": "Paulo Costa",
+      "email": "me@paulo.costa.nom.br"
+    },
+    {
+      "name": "Jacob Lucas",
+      "url": "https://jacob-lucas.uk",
+      "maintainer": true
+    }
+  ],
+  "license": "Unlicense",
+  "frameworks": "*",
+  "platforms": "*"
+}

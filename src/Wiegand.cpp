@@ -155,15 +155,15 @@ void Wiegand::flushData() {
             func_data(data, bits, func_data_param);
         }
     } else {
-        //4-bit keycode: No check necessary
-        if ((bits == 4)) {
+        //4-bit or 32-bit keycode: No check necessary
+        if (bits == 4 || bits == 32) {
             if (func_data) {
                 bits = align_data(data, 0, bits);
                 func_data(data, bits, func_data_param);
             }
 
-        //8-bit keybode: UpperNibble = ~lowerNibble
-        } else if ((bits == 8)) {
+        //8-bit keycode: UpperNibble = ~lowerNibble
+        } else if (bits == 8) {
             uint8_t value = data[0] & 0xF;
             if (data[0] == (value | ((0xF & ~value)<<4))) {
                 if (func_data) {
@@ -177,7 +177,7 @@ void Wiegand::flushData() {
             }
 
         //26 or 34-bits: First and last bits are used for parity
-        } else if ((bits == 26) || (bits == 34)) {
+        } else if (bits == 26 || bits == 34) {
             //FIXME: The parity check doesn't seem to work for a 34-bit reader I have,
             //but I suspect that the reader is non-complaint
 

@@ -7,11 +7,11 @@ A library to received data from Wiegand RFID Card readers.
 
 _Support multiple data formats_!
 - It can detect the message size format automatically!
-- 4, 8, 26 and 34 bits are tested and work fine
+- 4, 8, 26, 32, and 34 bits are tested and work fine
 - Should work with other formats (Let me know)
 
 _It is event-driven_!
-- You don't pool all the time checking if there is a card -- a callback will tell you when there is one.
+- You don't poll all the time checking if there is a card -- a callback will tell you when there is one.
 - The extra `void*` parameter on the callbacks are useful if you are using multiple Wiegand instances in your code.
 
 _It is hardware-agnostic_!
@@ -139,20 +139,25 @@ These are the most common formats seen in the wild:
 
 ### 26 and 34 bits formats
 
-These are the most common formats, tipically used on RFID card readers.
+These are the most common formats, typically used on RFID card readers.
 
 - The first and the last bits of the message are used for parity checks.
 - The first half of the bits must have EVEN parity.
 - The second half of the bits must have ODD parity.
 
 
-### 4 and 8 bit format
+### 4 and 8 bit formats
 
 These formats are sometimes used on keypads.
 
 On the 4-bit format, the digit is encoded in 4 bits, no extra stuff is added.
 
 On the 8-bit format, the digit is encoded in the lower 4 bits, and the higher 4 bits if the "NOT" of the digit.
+
+
+### 32 bit format
+
+This format might be non-standard, 4 digits are encoded in 32 bits, no parity included.
 
 
 # This Library

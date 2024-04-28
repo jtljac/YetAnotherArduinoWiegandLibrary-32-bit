@@ -1,10 +1,11 @@
 {
-  "name": "Yet Another Arduino Wiegand Library",
+  "name": "Yet Another Arduino Wiegand Library - 32-bit support",
   "version": "2.1.0",
-  "description": "This library supports messages of different sizes (Usually 26 or 34 bits) and automatic size detection.",
+  "description": "This library supports messages of different sizes (Usually 26 or 34 bits) and automatic size detection. This version also includes support for 32-bits keycodes.",
   "keywords": [
     "communication",
-    "wiegand"
+    "wiegand",
+    "32-bit"
   ],
   "repository": {
     "type": "git",
